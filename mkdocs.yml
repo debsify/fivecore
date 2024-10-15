@@ -2,3 +2,51 @@ site_name: My Docs
 site_url:
 theme:
   name: material
+  font:
+    text: Ubuntu Sans
+    code: Open Sans
+  palette:
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: deep orange
+        accent: orange
+        toggle:
+          icon: material/brightness-7
+          name: Dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: deep orange
+        accent: orange
+        toggle:
+          icon: material/brightness-4
+          name: Light mode
+  
+  features:
+      - navigation.tabs
+      - navigation.sections
+      - toc.integrate
+      - search.suggest
+      - search.highlight
+      - content.tabs.link
+      - content.code.annotation
+      - content.code.copy
+      - header.autohide
+      - announce.dismiss
+      - navigation.footer
+
+extra:
+  social:
+      - icon: fontawesome/brands/github
+        link: https://github.com/debsify
+        name: Debsify Satisfying
+  alternate:
+      - name: English
+        link: /en/ 
+        lang: en
+      - name: Indonesian
+        link: /id/
+        lang: id
+
+plugins:
+
+copyright: Copyright &copy; 2024 Debsify Satisfying
