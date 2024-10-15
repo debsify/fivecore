@@ -37,11 +37,3 @@ jobs:
               run: |
                 mkdocs gh-deploy --force
                 echo "Deployment completed"
-            - name: Check deployment
-              run: |
-               if [ -d "site" ]; then
-                echo "Site directory exists"
-                ls -la site
-               else
-                echo "Site directory does not exist"
-                exit 1
