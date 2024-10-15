@@ -12,6 +12,8 @@ jobs:
         steps:
             - name: actions
               uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
             - name: python
               uses: actions/setup-python@v5
               with:
@@ -21,5 +23,25 @@ jobs:
               with:
                 key: ${{ github.ref }}
                 path: .cache
-            - run: pip install mkdocs-material
-            - run: mkdocs gh-deploy --force
+            - name: Install dependencies
+              run: |
+                pip install mkdocs-material
+                pip install -r requirements.txt
+            - name: Configure Git
+              run: |
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+            - name: Build site
+              run: mkdocs build --verbose
+            - name: Deploy
+              run: |
+                mkdocs gh-deploy --force
+                echo "Deployment completed"
+            - name: Check deployment
+              run: |
+               if [ -d "site" ]; then
+                echo "Site directory exists"
+                ls -la site
+               else
+                echo "Site directory does not exist"
+                exit 1
