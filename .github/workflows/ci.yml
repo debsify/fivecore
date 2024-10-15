@@ -12,17 +12,12 @@ jobs:
         steps:
             - name: actions
               uses: actions/checkout@v4
-              with:
-                fetch-depth: 0
             - name: python
               uses: actions/setup-python@v5
               with:
                 python-version: 3.x
             - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
             - uses: actions/cache@v4
-              with:
-                key: ${{ github.ref }}
-                path: .cache
             - name: Install dependencies
               run: |
                 pip install mkdocs-material
@@ -36,4 +31,4 @@ jobs:
             - name: Deploy
               run: |
                 mkdocs gh-deploy --force
-                echo "Deployment completed"
+                echo "Deployment completed. Please check your GitHub Pages URL in a few minutes."
