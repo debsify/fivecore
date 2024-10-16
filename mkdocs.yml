@@ -1,10 +1,17 @@
-site_name: My Docs
-site_url:
+site_name: 5CORE
+site_url: https://github.com/debsify
+site_author: Debsify Satisfying
+site_description: we love 
 theme:
   name: material
   font:
-    text: Ubuntu Sans
-    code: Open Sans
+    text: Open Sans
+    code: Noto Sans
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    #palette
   palette:
       - media: "(prefers-color-scheme: light)"
         scheme: default
@@ -22,17 +29,33 @@ theme:
           name: Light mode
   
   features:
+      - navigation.instant
+      - navigation.instant.prefetch
+      - navigation.instant.progress
+      # - navigation.instant.preview
+      - navigation.tracking
       - navigation.tabs
+      - navigation.tabs.sticky
       - navigation.sections
+      - navigation.expand
+      - navigation.path
+      # - navigation.prune
+      - navigation.indexes
+      - toc.follow
       - toc.integrate
+      - navigation.top
       - search.suggest
       - search.highlight
-      - content.tabs.link
-      - content.code.annotation
-      - content.code.copy
+      - search.share
       - header.autohide
       - announce.dismiss
       - navigation.footer
+      - content.action.edit
+      - content.action.view
+
+repo_name: debsify/fivecore
+repo_url: https://github.com/debsify/fivecore
+edit_uri: edit/main/docs
 
 extra:
   social:
@@ -48,5 +71,6 @@ extra:
         lang: id
 
 plugins:
+    - search
 
 copyright: Copyright &copy; 2024 Debsify Satisfying
